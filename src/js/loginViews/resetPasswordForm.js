@@ -86,7 +86,8 @@ export class ResetPasswordForm extends BaseForm {
                 <h2 class="reset-heading">Reset Password</h2>
                 
                 <div class="reset-reset">
-                    <div class="reset-email-box form-box">
+                    <div class="
+                    -email-box form-box">
                         <input type="email" name="email" placeholder="email" class="bd-radius" required>
                     </div>
                 </div>
@@ -123,9 +124,4 @@ export class ResetPasswordForm extends BaseForm {
         </div>
         `
     }
-
-    // remove() {
-    //     this._component.remove()
-    //     delete this
-    // }
 }

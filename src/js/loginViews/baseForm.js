@@ -99,18 +99,23 @@ export class BaseForm {
             this._clearForm()
             return;
         };
-        const errorKeys = Object.getOwnPropertyNames(errors)
 
-        errorKeys.forEach(formFieldKey => {
-            const formField = selector(`[name=${formFieldKey.trim()}]`, this._component)
-            if (formField) {
-                renderError = true
-                formField.classList.add("form-field-error")
-            }
-        })
-        if (renderError)
-            this.activeFormErrors = true;
+        if (errors) {
+            const errorKeys = Object.getOwnPropertyNames(errors)
+
+            errorKeys.forEach(formFieldKey => {
+                const formField = selector(`[name=${formFieldKey.trim()}]`, this._component)
+                if (formField) {
+                    renderError = true
+                    formField.classList.add("form-field-error")
+                }
+            })
+            if (renderError)
+
+                this.activeFormErrors = true;
+        }
     }
+
 
     _clearForm() {
         const formInputs = this._component.querySelectorAll("input")
